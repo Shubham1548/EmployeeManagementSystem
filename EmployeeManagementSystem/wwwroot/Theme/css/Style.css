@@ -1,0 +1,158 @@
+﻿.square-box {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    line-height: 100px;
+    text-align: center;
+    background-color: #FFA07A;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    
+}
+
+    .square-box:hover {
+        transform: scale(1.1);
+    }
+
+.square-box1 {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    line-height: 100px;
+    text-align: center;
+    background-color: #90EE90;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+    .square-box1:hover {
+        transform: scale(1.1);
+    }
+
+.square-box2 {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    line-height: 100px;
+    text-align: center;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+    .square-box2:hover {
+        transform: scale(1.1);
+    }
+
+.square-box3 {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    line-height: 100px;
+    text-align: center;
+    background-color: #FFB6C1;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+    .square-box3:hover {
+        transform: scale(1.1);
+    }
+
+.square-box4 {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    line-height: 100px;
+    text-align: center;
+    background-color: #9370DB;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+    .square-box4:hover {
+        transform: scale(1.1);
+    }
+
+.square-box5 {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    line-height: 100px;
+    text-align: center;
+    background-color: #40E0D0;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+    .square-box5:hover {
+        transform: scale(1.1);
+    }
+
+.square-box6 {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    line-height: 100px;
+    text-align: center;
+    background-color: #F4A460;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+    .square-box6:hover {
+        transform: scale(1.1);
+    }
+
+.square-box7 {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    line-height: 100px;
+    text-align: center;
+    background-color: #DB7093;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+    .square-box7:hover {
+        transform: scale(1.1);
+    }
+
+.square-box8 {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    line-height: 100px;
+    text-align: center;
+    background-color: #20B2AA;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+    .square-box8:hover {
+        transform: scale(1.1);
+    }
+
+.login {
+    background-image: url("baclo2.jpg");
+    background-size: cover;
+}

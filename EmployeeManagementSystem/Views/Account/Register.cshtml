@@ -1,0 +1,240 @@
+﻿@using EmployeeManagementSystem.LoginModels;
+@model RegisterVM;
+
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_Layoutlogs.cshtml";
+}
+
+
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+
+    :root {
+        --main-blue: #71b7e6;
+        --main-purple: #9b59b6;
+        --main-grey: #ccc;
+        --sub-grey: #d9d9d9;
+    }
+
+    body {
+        display: flex;
+        height: 100vh;
+        justify-content: center; /*center vertically */
+        align-items: center; /* center horizontally */
+        background: linear-gradient(135deg, var(--main-blue), var(--main-purple));
+        padding: 10px;
+    }
+    /* container and form */
+    .container {
+        max-width: 700px;
+        width: 100%;
+        background: #fff;
+        padding: 25px 30px;
+        border-radius: 5px;
+    }
+
+        .container .title {
+            font-size: 25px;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .container form .user__details {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 20px 0 12px 0;
+        }
+    /* inside the form user details */
+    form .user_details .input_box {
+        width: calc(100% / 2 - 20px);
+        margin-bottom: 15px;
+    }
+
+    .user_details .input_box .details {
+        font-weight: 500;
+        margin-bottom: 5px;
+        display: block;
+    }
+
+    .user_details .input_box input {
+        height: 45px;
+        width: 100%;
+        outline: none;
+        border-radius: 5px;
+        border: 1px solid var(--main-grey);
+        padding-left: 15px;
+        font-size: 16px;
+        border-bottom-width: 2px;
+        transition: all 0.3s ease;
+    }
+
+        .user_details .input_box input:focus,
+        .user_details .input_box input:valid {
+            border-color: var(--main-purple);
+        }
+
+    /* inside the form gender details */
+
+    form .gender_details .gender_title {
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    form .gender__details .category {
+        display: flex;
+        width: 80%;
+        margin: 15px 0;
+        justify-content: space-between;
+    }
+
+    .gender__details .category label {
+        display: flex;
+        align-items: center;
+    }
+
+    .gender__details .category .dot {
+        height: 18px;
+        width: 18px;
+        background: var(--sub-grey);
+        border-radius: 50%;
+        margin: 10px;
+        border: 5px solid transparent;
+        transition: all 0.3s ease;
+    }
+
+    #dot-1:checked ~ .category .one,
+    #dot-2:checked ~ .category .two,
+    #dot-3:checked ~ .category .three {
+        border-color: var(--sub-grey);
+        background: var(--main-purple);
+    }
+
+    form input[type="radio"] {
+        display: none;
+    }
+
+    /* submit button */
+    form .button {
+    }
+
+        form .button input {
+            height: 100%;
+            width: 100%;
+            outline: none;
+            color: #fff;
+            border: none;
+            font-size: 18px;
+            font-weight: 500;
+            border-radius: 5px;
+            background: linear-gradient(135deg, var(--main-blue), var(--main-purple));
+            transition: all 0.3s ease;
+        }
+
+            form .button input:hover {
+                background: linear-gradient(-135deg, var(--main-blue), var(--main-purple));
+            }
+
+
+    .container1 {
+        max-width: 180%;
+        align-items: center;
+        height: 250%;
+        margin: -29px;
+        background: #fff;
+        max-width: 700px;
+        width: 100%;
+        background: #fff;
+        padding: 25px 30px;
+        border-radius: 5px;
+    }
+
+    form .user_details .input_box {
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+    form .gender__details .category {
+        width: 100%;
+    }
+
+    .container form .user__details {
+        max-height: 300px;
+        overflow-y: scroll;
+    }
+
+</style>
+
+<div class="container1" style="margin-top:-10%; width:900px; margin-left:-4%;">
+    <div class="title" style="text-align:center; font-weight:bold; font-size:30px;">Registration</div><br />
+    <form asp-action="Register" method="post" asp-route-returnurl="@ViewData["ReturnUrl"]">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="mb-1">
+            <label asp-for="Role" class="control-label"></label>
+            <input asp-for="Role" class="form-control" />
+            <span asp-validation-for="Role" class="text-danger"></span>
+        </div>
+        <div class="mb-1">
+            <label asp-for="UniqueKey" class="control-label"></label>
+            <input asp-for="UniqueKey" class="form-control" autocomplete="off" />
+            <span asp-validation-for="UniqueKey" class="text-danger"></span>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" class="form-control" autocomplete="off" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="col-md-6 mb-4">
+                <label asp-for="MiddleName" class="control-label"></label>
+                <input asp-for="MiddleName" class="form-control" autocomplete="off" />
+                <span asp-validation-for="MiddleName" class="text-danger"></span>
+            </div>
+            <div class="col-md-6 mb-4">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" autocomplete="off" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="col-md-6 mb-4">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" autocomplete="off" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="mb-1">
+            <label asp-for="Password" class="control-label"></label>
+            <input asp-for="Password" class="form-control" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+        <div class="mb-1">
+            <label asp-for="confirmPassword" class="control-label"></label>
+            <input asp-for="confirmPassword" class="form-control" />
+            <span asp-validation-for="confirmPassword" class="text-danger"></span>
+        </div>
+        <div class="button" style="padding:5px;">
+            <input type="submit" value="Register" style="padding:5px;">
+        </div>
+
+        <div class="row">
+            <div class="col-8">
+                <a asp-action="Login" asp-route-returnurl="@ViewData["ReturnUrl"]" class="text-decoration-none float-start mt-2"></a>
+            </div>
+
+        </div>
+
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

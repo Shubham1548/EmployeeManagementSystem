@@ -1,0 +1,165 @@
+﻿@using EmployeeManagementSystem.LoginModels;
+@model LoginVM
+
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layoutlogs.cshtml";
+
+
+}
+
+<script>
+    if ('@TempData["SuccessMessage"]' != '') {
+        alert("@TempData["SuccessMessage"]")
+    }
+</script>
+<style>
+    /* Reset CSS */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f2f2f2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        margin-top:-8%;
+    }
+
+    .login-container {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        padding: 40px;
+        max-width: 400px;
+        width: 90%;
+        text-align: center;
+        margin: 25px;
+        margin-left: 52px;
+
+    }
+
+    .login-form {
+        display: flex;
+        flex-direction: column;
+    }
+
+        .login-form h1 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .login-form p {
+            margin-bottom: 20px;
+            color: #777;
+        }
+
+    .input-group {
+        margin-bottom: 20px;
+    }
+
+        .input-group input {
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            width: 100%;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+            .input-group input:focus {
+                border-color: #007bff;
+                outline: none;
+            }
+
+    button {
+        padding: 15px;
+        border: none;
+        border-radius: 8px;
+        background-color: #007bff;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+    .bottom-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+        color: #777;
+    }
+
+        .bottom-text p {
+            margin-bottom: 10px;
+        }
+
+        .bottom-text a {
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+            .bottom-text a:hover {
+                color: #0056b3;
+            }
+
+    /* Responsive */
+
+    .login-container {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    
+</style>
+
+<div class="login-container" style="width:500px;">
+
+    <form asp-action="Login" class="login-form" method="post" asp-route-returnurl="@ViewData["ReturnUrl"]">
+        <h1>Login</h1>
+        <p>Please login to your account</p>
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="mb-1">
+            <input asp-for="userName" class="form-control" placeholder="Username" />
+            <span asp-validation-for="userName" class="text-danger"></span>
+        </div><br />
+        <div class="mb-1">
+            <input asp-for="password" class="form-control" placeholder="Password" />
+            <span asp-validation-for="password" class="text-danger"></span>
+        </div><br />
+       
+        <div class="row">
+
+            <button type="submit" value="Login">Login</button>
+
+            <div class="bottom-text">
+                <a asp-action="ForgotPassword">Forgot Password?</a>
+                <p>
+                    <i style="text-transform:inherit;  letter-spacing: 0px;">Don't have an account?<a asp-action="Register" class="text-decoration-none mt-2" asp-route-returnurl="@ViewData["ReturnUrl"]">Register Here</a></i>
+                </p>
+               
+            </div>
+        </div>
+    </form>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,174 @@
+﻿@model IEnumerable<EmployeeManagementSystem.Models.UserInfo>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script>
+    if ('@TempData["Success"]' != '') {
+        alert('@TempData["Success"]');
+    }
+     if ('@TempData["error"]' != '') {
+        alert('@TempData["error"]');
+    }
+</script>
+
+<style>
+    .card-body {
+        overflow: auto;
+        padding: 16px 8px 0px 11px;
+    }
+
+    #example2 thead th {
+        background-color: #5a80a9;
+        color: #fff;
+        border: 1px solid #000; /* Black border */
+    }
+
+
+    .table-title {
+        margin-bottom: 20px;
+    }
+
+    #searchInputContainer {
+        position: relative;
+    }
+
+    #searchInput {
+        margin-top: 6px;
+        border: 1px solid #007bff;
+        border-radius: 4px;
+        padding: 8px 30px 8px 10px;
+        width: 200px;
+    }
+
+    #example2 thead th {
+        background: linear-gradient(to bottom, #e6e5f2, green);
+        color: #fff;
+        border: 1px solid #000;
+    }
+
+
+    /* Style for the search icon */
+    .search-icon {
+        position: absolute;
+        top: 50%;
+        left: 170px; /* Adjust the position to the left */
+        transform: translateY(-50%);
+        color: #007bff; /* Color of the icon */
+        cursor: pointer;
+        z-index: 1; /* Ensure the icon is above the input field */
+    }
+
+</style>
+<a asp-action="Create" class="btn btn-warning">Create New</a>
+
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    @* <li class="breadcrumb-item active">Membership</li>*@
+                </ol>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+<section class="content">
+    <div class="container-fluidl">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <!-- Add space between search input and table headline -->
+
+
+                        <br>
+
+
+                        <table id="example2" class="table table-bordered table-striped" style="overflow:auto;">
+
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.FirstName)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.MiddleName)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.LastName)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.UserCode)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.EmailId)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.MobileNumber)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.UserRole)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.UserPassword)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.City)
+                                    </th>
+                                    <th>
+                                        Action
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.FirstName)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.MiddleName)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.LastName)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.UserCode)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.EmailId)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.MobileNumber)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.UserRole)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.UserPassword)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.City)
+                                        </td>
+                                        <td>
+                                            <a asp-action="Edit" asp-route-id="@item.UserId" class="bi bi-pencil-square"></a> |
+                                            <a asp-action="Delete" asp-route-id="@item.UserId" class="bi bi-trash-fill"></a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- /.container-fluid -->
+</section>
